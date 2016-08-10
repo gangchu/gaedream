@@ -16,7 +16,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #f7f7f7;
+	background-color: white;
 	font-size: 16px;
 	line-height: 25px;
 	color: #3b3b3b;
@@ -30,6 +30,10 @@ img {
 ul {
 	margin: 0;
 	padding: 0;
+}
+
+div.logo {
+	margin-left: 20px;
 }
 
 .loader {
@@ -239,9 +243,10 @@ header .logo img {
     ---------- */
 
 header nav {
-	float: right;
+	float: left;
 	line-height: 75px;
-	margin-right: 60px;
+	/*margin-right: 60px;*/
+	margin-left: 25px;
 }
 
 header nav ul li a {
@@ -251,10 +256,10 @@ header nav ul.right {
 	margin-left: 100px
 
 }
-header nav ul.left {
-	float: left;
+/*header nav ul.left {*/
+/*	float: left;*/
 
-}
+/*}*/
 
 /*.wrapper header nav input {*/
 /*	width:150px;*/
@@ -262,6 +267,11 @@ header nav ul.left {
 header nav ul li {
 	display: inline-block;
 	margin-left: 25px;
+	position: relative;
+}
+header nav ul.right li {
+	display: inline-block;
+	margin-left: 10px;
 	position: relative;
 }
 
@@ -276,11 +286,19 @@ header nav ul.left li a {
 	text-decoration: none;
 }
 
+
 header nav ul.left li.active a,
 header nav ul.left li a:hover {
-	color: #c4c4c4;
-	background-color: black;
+	color: black;
+	background-color: #c4c4c4;
 }
+
+
+/*header nav ul.left li.active a,*/
+/*header nav ul.left li a:hover {*/
+/*	color: #c4c4c4;*/
+/*	background-color: black;*/
+/*}*/
 
 header nav ul li ul {
 	position: absolute;
