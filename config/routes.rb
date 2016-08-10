@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-
   get 'home/index'
+  get 'home/index2'
   get 'home/project_single'
   get 'home/write_post' => 'home#write_post'
   post 'home/post_write' => 'home#post_write'
