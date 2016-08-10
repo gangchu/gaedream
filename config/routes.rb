@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
   get 'home/index'
-  get 'home/index2'
-  get 'home/project_single'
   get 'home/write_post' => 'home#write_post'
   post 'home/post_write' => 'home#post_write'
   get 'home/about'
   get 'home/contact'
   post 'home/form'
+  get 'home/matching'
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
