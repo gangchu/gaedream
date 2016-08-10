@@ -338,7 +338,7 @@ header nav ul li ul li ul {
 	opacity: 0 !important;
 	visibility: hidden !important;
 }
- header nav ul li ul li:hover ul {
+header nav ul li ul li:hover ul {
 	opacity: 1 !important;
 	visibility: visible !important;
 }
@@ -776,7 +776,7 @@ header nav ul li ul li ul {
 /*}*/
 footer {
 	background-color: black;
-	height: 260px;
+	height: 150px;
 	/*margin-top: 100px;*/
 }
 
