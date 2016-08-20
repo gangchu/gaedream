@@ -1,0 +1,63 @@
+<body>
+		<div class="loader"></div>
+		<div class="wrapper">
+			<div class="container">
+				
+  				<form action="/home/pet_upload" method="POST" enctype="multipart/form-data">
+  					<div class="form-group">
+					    <label for="pet_subject">제목</label>
+					    <input type="text" class="form-control" id="pet_subject" name="pet_subject" placeholder="제목">
+					  </div>
+  					<div class="form-group">
+					    <label for="name">이름</label>
+					    <input type="text" class="form-control" id="name" name="name" placeholder="이름">
+					  </div>
+					  <div class="form-group">
+					    <label for="residence">거주지</label>
+					    <input type="text" class="form-control" id="residence" name="residence" placeholder="거주지">
+					  </div>
+					  <div class="form-group">
+					    <label for="type">종류</label>
+					    <input type="text" class="form-control" id="type" name="type" placeholder="종류">
+					  </div>
+					  <div class="form-group">
+					    <label for="age">나이</label>
+					    <input type="text" class="form-control" id="age" name="age" placeholder="나이">
+					  </div>
+					  <div class="form-group">
+					    <label for="sex">성별</label>
+					    <input type="text" class="form-control" id="sex" name="sex" placeholder="성별">
+					  </div>
+					  
+					  <div class="form-group">
+					    <label for="exampleInputFile">File input</label>
+					    <input type="file" id="exampleInputFile">
+					    <p class="help-block">Example block-level help text here.</p>
+					  </div>
+    				
+    				<div id="summernote" name="detail"></div>
+  			    
+  			    <button type="submit" class="btn btn-default">등록</button>
+  			  </form>
+				
+			</div>
+		</div>
+</body>
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#summernote").summernote({
+      lang: 'ko-KR',
+      height: 200,
+      codemirror: {
+        lineWrapping: true,
+        lineNumbers: true,
+        tabSize: 2
+      }
+    });
+ });
+
+ </script>

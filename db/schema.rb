@@ -11,12 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805055522) do
+ActiveRecord::Schema.define(version: 20160819073439) do
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "writer"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "newdogs", force: :cascade do |t|
+    t.string   "pet_subject"
+    t.string   "name"
+    t.string   "residence"
+    t.string   "type"
+    t.string   "age"
+    t.string   "sex"
+    t.string   "detail"
+    t.string   "image_url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.string   "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,6 +45,8 @@ ActiveRecord::Schema.define(version: 20160805055522) do
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.string   "name",                   default: "", null: false
+    t.string   "nickname",               default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

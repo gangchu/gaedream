@@ -17,4 +17,6 @@
 //= require main
 //= require jquery
 //= require jquery_ujs
+//= require summernote
+//= require summernote/locales/ko-KR
 //= require_tree .

@@ -13,59 +13,40 @@
 					<nav>
 						<!--<div class="col-md-6">-->
 						<ul id="menu" class="left" style="float:left">
-							<li class="active"><a href="#">Home</a></li>
+							<li><a href="/home/index">Home</a></li>
 							<li><a href="/home/about">About</a></li>
-							<li>
-								<a href="#">Pages</a>
-								<ul>
-									<li>
-										<a href="#">Masonry</a>
-										<ul>
-											<li><a href="index2.html">2 Column</a></li>
-											<li><a href="#">3 Column</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">Blog</a>
-										<ul>
-											<li><a href="journal-grid.html">Grid</a></li>
-											<li><a href="journal-full.html">Full Width</a></li>
-											<li><a href="journal.html">Classic</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">Portfolio</a>
-										<ul>
-											<li><a href="portfolio.html">2 Column</a></li>
-											<li><a href="portfolio-3.html">3 Column</a></li>
-											<li><a href="portfolio-4.html">4 Column</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
 							<li><a href="/home/contact">Contact</a></li>
-							<li><a href="journal.html">Matching</a></li>
+							<li><a href="/home/matching">Matching</a></li>
+							<li><a href="/home/my_pages">My Pages</a>
+								
+							</li>
 							</ul>
 						<!--</div>-->
 						
 						<!--<div class="col-md-4 col-md-offset-4">-->
 						<ul id="menu2" class="right">
-						<li>
-						<feildset>
-							<a href="#"><input class="form-control"></a> 
-						</feildset>
-						
-						</li>
-						<li></li>
-						<li></li>
-						
-							 <% if user_signed_in? %> 
-                   			   <li><a class="page-scroll" href="users/edit"><%= current_user.email %></a></li>
-				     		   <li><%= link_to "Logout", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?" }%></li>
-							 <% else %>
-    						   <li><%= link_to "SignUp", new_user_registration_path %></li>
-    				   	  		<li><%= link_to "Login", new_user_session_path%></li>
-    					 <% end %>
+							<li>
+							<feildset>
+								<a href="#"><input class="form-control"></a> 
+							</feildset>
+							
+							</li>
+							<li></li>
+							<li></li>
+	
+							    <% if user_signed_in? %>
+							      <li class="dropdown">
+							        <a href="" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.nickname %> <b class="caret"></b></a>
+							        <ul class="dropdown-menu">
+							          <li><%= link_to "계정관리", edit_user_registration_path %></li>
+							          <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
+							        </ul>
+							      </li>
+							    <% else %>
+									 <li><%= link_to "로그인", new_user_session_path %></li>
+									 <li><%= link_to "로그아웃", new_user_registration_path %></li>
+									
+							    <% end %>
 						</ul>
 						<!--</div>-->
 					</nav>

@@ -294,6 +294,9 @@ header nav ul.left li a:hover {
 }
 
 
+my_pages .blog-post :hover { background-color: #380606; }
+
+
 /*header nav ul.left li.active a,*/
 /*header nav ul.left li a:hover {*/
 /*	color: #c4c4c4;*/
@@ -342,6 +345,7 @@ header nav ul li ul li:hover ul {
 	opacity: 1 !important;
 	visibility: visible !important;
 }
+
 
 /* -------------------------------
    3. Portfolio + Portfolio Single
@@ -976,3 +980,4 @@ footer p {
 		margin-top: 100px;
 	}
 }
+

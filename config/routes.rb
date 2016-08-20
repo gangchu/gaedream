@@ -1,19 +1,28 @@
 Rails.application.routes.draw do
 
   get 'home/index'
-  get 'home/write_post' => 'home#write_post'
-  post 'home/post_write' => 'home#post_write'
+  get 'home/upload_pet'
+  get 'home/list' => 'home#list'
+  post 'home/pet_upload' => 'home#pet_upload'
   get 'home/about'
   get 'home/contact'
   post 'home/form'
   get 'home/matching'
-  devise_for :users
-
+  devise_for :users, controllers: {:registrations => "users/registrations", :sessions => "users/sessions" }
+  get 'home/my_pages'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
  root 'home#index'
+ 
+  #메시지 관련 라우트
+  get 'home/message_recieved_box'
+  get 'show(/:id)' => 'home#message_show'
+  
+  get 'new(/:id)' => 'home#message_new'
+  get 'show_content(/:id)' => 'home#show_content'
+  post 'home/create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
