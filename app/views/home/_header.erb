@@ -24,18 +24,14 @@
 						<!--</div>-->
 						
 						<!--<div class="col-md-4 col-md-offset-4">-->
+						<div>
 						<ul id="menu2" class="right">
-							<li>
-							<feildset>
-								<a href="#"><input class="form-control"></a> 
-							</feildset>
-							
-							</li>
+
 							<li></li>
 							<li></li>
-	
+						
 							    <% if user_signed_in? %>
-							      <li class="dropdown">
+							      <li class="dropdown" >
 							        <a href="" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.nickname %> <b class="caret"></b></a>
 							        <ul class="dropdown-menu">
 							          <li><%= link_to "계정관리", edit_user_registration_path %></li>
@@ -44,10 +40,11 @@
 							      </li>
 							    <% else %>
 									 <li><%= link_to "로그인", new_user_session_path %></li>
-									 <li><%= link_to "로그아웃", new_user_registration_path %></li>
+									 <li><%= link_to "회원가입", new_user_registration_path %></li>
 									
 							    <% end %>
 						</ul>
+						
 						<!--</div>-->
 					</nav>
 					</div>

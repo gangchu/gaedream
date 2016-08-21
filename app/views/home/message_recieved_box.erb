@@ -1,0 +1,18 @@
+<center>
+<div class="container" style="margin-top:50px">
+    <table class="table" style="width:50%">
+      <tr>
+        <th>from</th>
+        <th>title</th>
+      </tr>
+      <br>
+      <br>
+      <% @messages.each do |m| %>
+      <tr>
+        <td><%= m.writer %></td>
+        <td><a href="/show_content/<%=m.id%>"%><%= m.title %></a></td>
+      </tr>
+      <%end%>
+    </table>
+</div>
+</center>

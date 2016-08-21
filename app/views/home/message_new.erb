@@ -1,0 +1,12 @@
+<div class="container" style="margin-top:100px">
+    <form action="/home/create" method="POST">
+        <input type="hidden" name="recipient" value="<%=params[:id]%>">
+        <label for="exampleInputEmail1" style="margin-top:20px">받는 사람</label>
+        <input type="text" name="title" class="form-control" placeholder="<%=@touser.email%>" style="margin-top:20px" readonly>
+        <label for="exampleInputEmail1" style="margin-top:20px">제목</label>
+        <input type="text" name="title" class="form-control" placeholder="제목" style="margin-top:20px">
+        <label style="margin-top:20px">내용</label>
+        <textarea rows="10" name="content" class="form-control" placeholder="내용" style="margin-top:20px"></textarea>
+        <button type="submit" class="btn btn-primary" style="margin-top:20px">Messages <span class="badge">send!</span></button>
+    </form>
+</div>

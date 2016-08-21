@@ -253,7 +253,9 @@ header nav ul li a {
 	color: black;
 }
 header nav ul.right {
-	margin-left: 100px
+	margin-left: 100px;
+	float: right;
+
 
 }
 /*header nav ul.left {*/
@@ -293,8 +295,6 @@ header nav ul.left li a:hover {
 	background-color: #c4c4c4;
 }
 
-
-my_pages .blog-post :hover { background-color: #380606; }
 
 
 /*header nav ul.left li.active a,*/
@@ -340,10 +340,6 @@ header nav ul li ul li ul {
 	top: 0;
 	opacity: 0 !important;
 	visibility: hidden !important;
-}
-header nav ul li ul li:hover ul {
-	opacity: 1 !important;
-	visibility: visible !important;
 }
 
 
@@ -981,3 +977,14 @@ footer p {
 	}
 }
 
+.wrapper .container .page-title .row .dog_profile {
+	width: 800px;
+	height: 260px;
+	background-color : #F2F2F2;
+}
+.wrapper .container .blog .row .blod-content .blog-post .blog-info {
+	float: left;
+	border: 1px solid black;
+	width: 300px;
+	height: 300px;
+}
