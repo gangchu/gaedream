@@ -1,3 +1,12 @@
-.abcd {
-    background-color: blue
+.common_login{
+    margin-bottom: 100px;
+    margin-top: 90px;
+}
+
+.common {
+    text-decoration: none;
+}
+
+.common_login2{
+    margin-bottom: 10px;
 }

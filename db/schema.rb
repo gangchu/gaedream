@@ -17,16 +17,18 @@ ActiveRecord::Schema.define(version: 20160819073439) do
     t.string   "title"
     t.text     "content"
     t.string   "writer"
+    t.integer  "sender_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "newdogs", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "pet_subject"
     t.string   "name"
     t.string   "residence"
-    t.string   "type"
+    t.string   "kind"
     t.string   "age"
     t.string   "sex"
     t.string   "detail"

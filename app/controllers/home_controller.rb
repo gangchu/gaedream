@@ -28,7 +28,7 @@ class HomeController < ApplicationController
     new_pet.pet_subject = params[:pet_subject]
     new_pet.name = params[:name]
     new_pet.residence = params[:residence]
-    new_pet.type = params[:type]
+    new_pet.kind = params[:kind]
     new_pet.age = params[:age]
     new_pet.sex = params[:sex]
     new_pet.detail = params[:detail]
@@ -42,6 +42,18 @@ class HomeController < ApplicationController
     redirect_to "/list"
 
   end
+  
+  def pet_content
+    @one_pet = Newdog.find(params[:id])
+  end
+  
+  def delete_pet
+    @one_pet = Newdog.find(params[:id])
+    @one_pet.destroy
+    
+    redirect_to "/list"
+  end
+  
   
   def list
     @every_pet = Newdog.all
@@ -61,7 +73,7 @@ class HomeController < ApplicationController
   end
   
   def message_create #메시지 생성
-    Message.create(user_id: params[:recipient], title: params[:title], content: params[:content], writer: current_user.name)
+    Message.create(user_id: params[:recipient], title: params[:title], content: params[:content], sender_id: current_user.id, writer: current_user.name)
     redirect_to "/home/index"
   end
   

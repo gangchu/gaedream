@@ -1,4 +1,4 @@
-				<div id="header">
+				<header id="header">
 					<div class="logo" style="float:left", "margin-left:20px">
 						<a href="/home/index">
 						<img src="http://postfiles1.naver.net/20160810_176/georgeyeon_14707753964308r3Yd_JPEG/xs.jpg?type=w1" alt="">
@@ -13,11 +13,17 @@
 					<nav>
 						<!--<div class="col-md-6">-->
 						<ul id="menu" class="left" style="float:left">
-							<li class="hvr-pulse"><a href="/home/index">Home</a></li>
+							<li><a href="/home/index">Home</a></li>
 							<li><a href="/home/about">About</a></li>
-							<li><a href="/home/contact">Contact</a></li>
+							<li><a href="/home/contact">FAQ</a></li>
 							<li><a href="/home/matching">Matching</a></li>
-							<li><% if user_signed_in? %><a href="/home/my_pages"><% else %><a href="/user/log_in">My Pages<% end %></a></li>
+							<li>
+								<% if user_signed_in? %>
+									<a href="/home/my_pages">My Pages</a>
+								<% else %>
+									<a href="/users/sign_in">My Pages</a>
+								<% end %>
+							</li>
 							</ul>
 						<!--</div>-->
 						
@@ -48,4 +54,4 @@
 					</div>
 					
 			
-				</div>
+				</header>

@@ -5,8 +5,8 @@
         <label style="margin-top:20px">내용</label>
         <textarea rows="10" name="content" class="form-control" style="margin-top:20px" readonly><%= @messages.content %></textarea>
         <br>
-        <!--<a href="/new/<%=params[:id]%>" style="margin-top:20px">
-            <button type="submit" class="btn btn-primary" style="margin-top:20px"><span class="badge">답장보내기</span></button>
-        </a>-->
+        <a href="/new/<%=@messages.sender_id%>" style="margin-top:20px">
+            <button type="button" class="btn btn-primary" style="margin-top:20px"><span class="badge">답장보내기</span></button>
+        </a>
     </form>
 </div>

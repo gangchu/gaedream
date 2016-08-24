@@ -30,8 +30,12 @@
 		<link href="css/hover.css" rel="stylesheet" media="all">
 </head>
 <body>
-<%= render '/home/header' %>
-<%= yield %>
-<%= render '/home/footer' %>
+	<!--<div class="wrapper">-->
+		<%= render '/home/header' %>
+		<div id="content">
+		<%= yield %>
+		</div>
+		<%= render '/home/footer' %>
+	<!--</div>-->
 </body>
 </html>
