@@ -13,6 +13,11 @@
 					<div class="row">
 							<img src="http://postfiles14.naver.net/20160810_77/georgeyeon_1470766040020kNubi_JPEG/KakaoTalk_20160806_151953592.jpg?type=w1" alt="">
 					</div>
+					<% @users.each do |u| %>
+     					 <%= u.email %>
+      					 <%= u.name %>
+      					 <a href="/show/<%=u.id%>"><%= u.email %></a>
+    				<% end %>
 				<!--</div>-->
 				<hr>
 				<div class="portfolio">

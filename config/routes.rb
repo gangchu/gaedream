@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get 'home/upload_pet'
-  get 'home/list' => 'home#list'
+  get 'list' => 'home#list'
   post 'home/pet_upload' => 'home#pet_upload'
   get 'home/about'
   get 'home/contact'
@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get 'home/matching'
   devise_for :users, controllers: {:registrations => "users/registrations", :sessions => "users/sessions" }
   get 'home/my_pages'
+  get 'home/infomation'
+  get 'home/upload_pet'
+  get 'home/message_recieved_box'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -22,7 +25,7 @@ Rails.application.routes.draw do
   
   get 'new(/:id)' => 'home#message_new'
   get 'show_content(/:id)' => 'home#show_content'
-  post 'home/create'
+  post 'home/message_create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   
   def index
     @posts = Post.all
+    @users = User.all
  
   end
   def index2
@@ -23,25 +24,26 @@ class HomeController < ApplicationController
   def pet_upload
     
     new_pet = Newdog.new
-    new_pet.subject = params[:subject]
+    new_pet.pet_subject = params[:pet_subject]
     new_pet.name = params[:name]
     new_pet.residence = params[:residence]
     new_pet.type = params[:type]
     new_pet.age = params[:age]
     new_pet.sex = params[:sex]
     new_pet.detail = params[:detail]
+    
     uploader = SleepyUploader.new
-    uploader.store!(params[:pic])
-    new_pet.image_url = uploader.image_url
+    file = params[:pic]
+    uploader.store!(file)
+    new_pet.image_url = uploader.thumb.url
     new_pet.save
    
-    
-    redirect_to "/home/index"
+    redirect_to "/list"
 
   end
   
   def list
-    
+    @every_pet = Newdog.all
   end
   
   def project_single
@@ -72,5 +74,8 @@ class HomeController < ApplicationController
   
   def show_content #내용show
     @messages = Message.where(id: params[:id]).take
+  end
+  
+  def infomation
   end
 end

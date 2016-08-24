@@ -1,0 +1,12 @@
+<div class="container" style="margin-top:100px">
+    <form>
+        <label for="exampleInputEmail1" >제목</label>
+        <input type="text" name="title" class="form-control" placeholder="<%= @messages.title %>" style="margin-top:20px" readonly>
+        <label style="margin-top:20px">내용</label>
+        <textarea rows="10" name="content" class="form-control" style="margin-top:20px" readonly><%= @messages.content %></textarea>
+        <br>
+        <!--<a href="/new/<%=params[:id]%>" style="margin-top:20px">
+            <button type="submit" class="btn btn-primary" style="margin-top:20px"><span class="badge">답장보내기</span></button>
+        </a>-->
+    </form>
+</div>

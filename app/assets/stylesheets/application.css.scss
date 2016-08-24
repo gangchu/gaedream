@@ -2,7 +2,8 @@
 @import 'summernote';
 @import 'font-awesome';
 @import 'style';
- 
+@import 'custom';
+@import 'hover';
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -15,9 +16,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap
- *= require font-awesome
- *= require style
  *= require_tree .
  *= require_self
  */

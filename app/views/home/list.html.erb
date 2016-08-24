@@ -1,20 +1,25 @@
-<div class="portfolio">
+<div class="wrapper">
+  <div class="portfolio">
 				
 		<div class="row portfolio-masonry" >
+		  <% @every_pet.each do |new_pet| %>
 			<div class="selector col-md-4 col-sm-6 col-xs-12 webdesign">
 				<a href="project_single">
-					<div class="item">
+					<div class="item" style="background-image: url('<%= new_pet.image_url %>')">
 						<div class="overlay">
 							<div class="inner-overlay">
 								<h3>개드림</h3>
 								<span>Gae Dream</span>
 							</div>
 						</div>
-						<img src="http://placehold.it/360x360" alt="">
+					
 					</div>
 				</a>
 			</div>
+			<% end %>
 		</div>
+</div>
+</div>
 				
 				
 	
