@@ -2,7 +2,7 @@
 <html>
 	<body>
 		<div class="loader"></div>
-
+        <div class="container">
 		<div class="wrapper">
 			<!--<div class="container">-->
 
@@ -14,9 +14,8 @@
 							<img src="http://postfiles14.naver.net/20160810_77/georgeyeon_1470766040020kNubi_JPEG/KakaoTalk_20160806_151953592.jpg?type=w1" alt="">
 					</div>
 					<% @users.each do |u| %>
-     					 <%= u.email %>
       					 <%= u.name %>
-      					 <a href="/show/<%=u.id%>"><%= u.email %></a>
+      					 <a href="/show/<%=u.id%>"><%= u.name %>님에게 메시지보내기</a>
     				<% end %>
 				<!--</div>-->
 				<hr>
@@ -31,7 +30,21 @@
 					<!--	</ul>-->
 					<!--</div>-->
 					<div class="row portfolio-masonry" >
-						
+						 <% @every_pet.each do |new_pet| %>
+						<div class="selector col-md-4 col-sm-6 col-xs-12 webdesign">
+							<a href="project_single">
+								<div class="item" style="background-image: url('<%= new_pet.image_url %>')">
+									<div class="overlay">
+										<div class="inner-overlay">
+											<h3>개드림</h3>
+											<span>Gae Dream</span>
+										</div>
+									</div>
+								
+								</div>
+							</a>
+						</div>
+						<% end %>
 					
 						
 	
@@ -55,6 +68,7 @@
 				<hr>
 				
 			</div>
+		</div>
 		</div>
 	</body>
 	<!--	<script src="assets/js/jquery-1.12.4.min.js"></script>-->

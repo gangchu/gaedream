@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   def index
     @posts = Post.all
     @users = User.all
+    @every_pet = Newdog.all
  
   end
   def index2

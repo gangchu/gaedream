@@ -2,7 +2,7 @@
     <form action="/home/message_create" method="POST">
         <input type="hidden" name="recipient" value="<%=params[:id]%>">
         <label for="exampleInputEmail1" style="margin-top:20px">받는 사람</label>
-        <input type="text" name="title" class="form-control" placeholder="<%=@touser.email%>" style="margin-top:20px" readonly>
+        <input type="text" name="recieve" class="form-control" placeholder="<%=@touser.name%>" style="margin-top:20px" readonly>
         <label for="exampleInputEmail1" style="margin-top:20px">제목</label>
         <input type="text" name="title" class="form-control" placeholder="제목" style="margin-top:20px">
         <label style="margin-top:20px">내용</label>
