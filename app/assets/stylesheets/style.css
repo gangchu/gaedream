@@ -389,9 +389,12 @@ header nav ul li ul li ul {
 
 .wrapper .portfolio .item {
 	margin-top: 30px;
+	margin-bottom: 30px;
 	position: relative;
-	 background-size: cover;
+	background-size: cover;
     background-position: center;
+    width: 350px;
+    height: 350px;
 }
 
 .wrapper .portfolio .item .overlay {
