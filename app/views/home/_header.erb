@@ -1,4 +1,4 @@
-				<header>
+				<div id="header">
 					<div class="logo" style="float:left", "margin-left:20px">
 						<a href="/home/index">
 						<img src="http://postfiles1.naver.net/20160810_176/georgeyeon_14707753964308r3Yd_JPEG/xs.jpg?type=w1" alt="">
@@ -17,7 +17,7 @@
 							<li><a href="/home/about">About</a></li>
 							<li><a href="/home/contact">Contact</a></li>
 							<li><a href="/home/matching">Matching</a></li>
-							<li><a href="/home/my_pages">My Pages</a></li>
+							<li><% if user_signed_in? %><a href="/home/my_pages"><% else %><a href="/user/log_in">My Pages<% end %></a></li>
 							</ul>
 						<!--</div>-->
 						
@@ -48,4 +48,4 @@
 					</div>
 					
 			
-				</header>
+				</div>
