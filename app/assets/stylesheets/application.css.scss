@@ -1,9 +1,12 @@
+
 @import 'bootstrap';
 @import 'summernote';
 @import 'font-awesome';
 @import 'style';
 @import 'custom';
 @import 'hover';
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -18,4 +21,5 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
  */

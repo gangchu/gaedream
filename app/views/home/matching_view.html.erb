@@ -1,0 +1,57 @@
+<div class="jumbotron" style="background-image: url('https://hd.unsplash.com/photo-1470322450444-8ccc64987ccf');background-size: cover; background-position: center">
+  <h1>사랑하는 반려견의 짝을 찾아드립니다</h1>
+  <p>지금바로 <span>매칭하세요</span></p>
+
+</div>
+
+<div class="wrapper">
+	<div class="container">
+	   <div class="page-title">	
+                   <h1 style="text-align: center; font-weight: 900; color: #293d88">반려견의 조건을 선택하세요!</h1>
+                   <p style="text-align: center; font-weight: 900">4가지 조건을 모두 선택하시면 더욱 성공적 매칭이 완료됩니다</p>
+       </div>
+    </div>
+</div>
+
+
+<section id="matching_part">
+	<div class="wrapper" style="text-align: center">
+		<div class="container">
+		    <form action="/matching" method="get" id="matching_form">
+		    <div class=" col-md-3 col-sm-6 col-xs-12">	
+			<select class="form-control" name="kind" id="kind">
+			    <option disabled selected value>종류</option>
+			      <% @kind.each do |kind| %>
+			        <option value="<%= kind %>"><%= kind %></option>
+			      <% end %>
+			</select>
+			</div>
+			<div class=" col-md-3 col-sm-6 col-xs-12">	
+			<select class="form-control col-md-3 col-sm-6 col-xs-12" name="age" id="age">
+			    <option disabled selected value>나이</option>
+			      <% @age.each do |age| %>
+			    <option value="<%= age %>"><%= age %></option>
+			      <% end %>
+			</select>
+			</div>
+			<div class=" col-md-3 col-sm-6 col-xs-12">	
+			<select class="form-control col-md-3 col-sm-6 col-xs-12" name="sex" id="sex">
+			    <option disabled selected value>성별</option>
+			      <% @sex.each do |sex| %>
+			    <option value="<%= sex %>"><%= sex %></option>
+			      <% end %>
+			</select>
+			</div>
+			<div class=" col-md-3 col-sm-6 col-xs-12">	
+			<select class="form-control col-md-3 col-sm-6 col-xs-12" name="residence" id="residence">
+			    <option disabled selected value>주거지</option>
+			      <% @residence.each do |residence| %>
+			    <option value="<%= residence %>"><%= residence %></option>
+			      <% end %>
+			</select>
+			</div>
+			<button class="btn btn-default" type="submit" id="bttn">매칭</button>
+			</form>
+		</div>
+	</div>
+</section>

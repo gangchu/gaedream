@@ -1,8 +1,9 @@
 <div class="container">
 	<div class="wrapper">
 	  <div class="portfolio">
-					
+
 			<div class="row portfolio-masonry" >
+	
 			  <% @every_pet.each do |new_pet| %>
 				<div class="selector col-md-4 col-sm-6 col-xs-12 webdesign">
 					<a href="pet_content/<%= new_pet.id %>">
@@ -16,7 +17,15 @@
 						
 						</div>
 					</a>
-					<a href="delete_pet/<%= new_pet.id %>">파일삭제</a>
+					<!--<a href="delete_pet/<%= new_pet.id %>" class="btn btn-default">파일삭제</a>-->  
+                     <!-- 삭제시 확인창이 뜨게 하였음 -->
+                    <% if user_signed_in? %>
+                    <% if new_pet.user_id == current_user.id %>
+					 <a href="delete_pet/<%= new_pet.id %>" onclick="return confirm('파일을 삭제하시겠습니까?');" class="btn btn-default">파일삭제</a>
+				    <% end %>
+				    <% unless new_pet.user_id == current_user.id %>
+				    <% end %>
+				    <% end %>
 				</div>
 				
 				<% end %>
@@ -24,8 +33,17 @@
 			</div>
 	   </div>
     </div>
+    </br></br>
+    <% if user_signed_in? %>
+    <a href="home/upload_pet" class="btn btn-default">게시글 작성</a>
+    <% end %>
+    <% unless user_signed_in? %>
+    <% end %>
 </div>
-<a href="home/upload_pet">파일올리기</a>
+
+
+		
+	
 				
 				
 	

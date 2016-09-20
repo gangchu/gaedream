@@ -1856,11 +1856,13 @@
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow: hidden;
-  background: #2098d1;
+  background: #E5B2CC;
+  width: 100px;
+  height: 100px;
   -webkit-transition-property: color;
   transition-property: color;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 .hvr-radial-in:before {
   content: "";

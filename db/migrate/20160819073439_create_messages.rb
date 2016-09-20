@@ -6,6 +6,7 @@ class CreateMessages < ActiveRecord::Migration
         t.string :writer #글쓴이
         t.integer :sender_id #글쓴이 user_id
         t.integer :user_id #어떤유저에게 보낼지
+        t.boolean :check
       t.timestamps null: false
     end
   end

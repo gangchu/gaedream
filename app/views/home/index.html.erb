@@ -1,48 +1,128 @@
-<!DOCTYPE html>
-<html>
-	<body>
-		<div class="loader"></div>
-        
-		
-			<!--<div class="container">-->
+<div class="loader"></div>
+	<!-- Controls -->
+    
+    <!--Carousel -->
+    
+        	<div class="slide-wrapper">
 
-				<br>
-				<!--<a href="/home/write_post" class="btn btn-default" role="button">글쓰기</a>-->
-				
-				<!--<div class="container">-->
-					<div class="row">
-							<img src="http://postfiles14.naver.net/20160810_77/georgeyeon_1470766040020kNubi_JPEG/KakaoTalk_20160806_151953592.jpg?type=w1" alt="">
-					</div>
-					<% @users.each do |u|%>
-						<%u.name%>
-						<a href="/show/<%=u.id%>"><%=u.name%>에게 메시지 보내기</a>
-					<%end%>
-				<!--</div>-->
-				<hr>
-				<div class="container">
-				  <div class="wrapper">
-				   <div class="portfolio">
-					
-					<div class="row portfolio-masonry" >
-						 <% @every_pet.each do |new_pet| %>
+               <div id="homepage-feature" class="carousel slide">
+                  <ol class="carousel-indicators">
+                     <li data-target="#homepage-feature" data-slide-to="0" class="active"></li>
+                     <li data-target="#homepage-feature" data-slide-to="1"></li>
+                  </ol>
+            
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+            
+                     <div class="item active" style="background-image:url(https://hd.unsplash.com/photo-1455287278107-115faab3eafa)">
+                        <div class="carousel-caption">
+                           <h1>솔로개..</h1>
+                           <p>내 짝 찾아주개?</p>
+                           <p><a class="btn btn-large btn-primary" href="/matching_view">찾으러 가개~</a>
+                           </p>
+                        </div>
+                     </div>
+            
+                     <div class="item" style="background-image:url(https://hd.unsplash.com/photo-1471459756805-2fef3588424b)">
+                        <div class="carousel-caption">
+                           <h1>외롭개..</h1>
+                           <p>내 짝좀 찾아주개..</p>
+                           <p><a class="btn btn-large btn-primary" href="#">찾으러 가개~~</a>
+                           </p>
+                        </div>
+                     </div>
+            
+                  </div>
+                  <!-- /.carousel-inner -->
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#homepage-feature" data-slide="prev">
+                    <span class="fa fa-angle-left"><</span>
+                  </a>
+                  <a class="right carousel-control" href="#homepage-feature" data-slide="next">
+                    <span class="fa fa-angle-right">></span>
+                  </a>
+               </div>
+               <!-- /#homepage-feature.carousel -->
+
+               <!--<div class="red">-->
+               <!--  <div class="red-content">-->
+               <!--     Content goes here.-->
+            
+               <!--  </div>-->
+            
+            
+               <!--</div>-->
+               
+            </div>
+            <!-- /.container.slide-wrapper -->
+
+<section id="list_pet">
+	<div class="wrapper">
+		<div class="container">
+			<div class="section-heading">
+                    <strong style="text-align: center;">목록</strong>
+                <div class="divider"></div>
+            </div>
+        </div>
+    </div>
+        <div class="wrapper">
+		    <div class="container">
+                    <form action="/home" method="get" id="petsearch_form">
+            	        <div class="input-group col-md-4 col-sm-6 col-xs-12">
+                            <input type="text" class="form-control search_submit" placeholder="Search" name="petsearch" id="petsearch" >
+                            <!--placeholder="현재 강아지의 이름만 검색이 됩니다"-->
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>    
+            </div>
+        </div>
+    <div class="wrapper">
+		<div class="container">
+		    <div class="portfolio">
+				<div class="portfolio-masonry" >
+					<% @every_pet.each do |new_pet| %>
 						<div class="selector col-md-4 col-sm-6 col-xs-12 webdesign">
+						    <div class="thumbnail">
 							<a href="/pet_content/<%= new_pet.id %>">
-								<div class="item" style="background-image: url('<%= new_pet.image_url %>')">
+								<div class="item" style="background-image: url('<%= new_pet.image_url %>'); margin-top: 0px">
 									<div class="overlay">
 										<div class="inner-overlay">
 											<h3><%= new_pet.kind %></h3>
 											<span><%= new_pet.age %></span>
 										</div>
 									</div>
-								
 								</div>
 							</a>
+							    <div>
+							        <center><h1><%= new_pet.name %></h1></center>
+							    </div>
+							</div>
 						</div>
-						<% end %>
-					</div>
-				<hr>
-			    </div>
-			   </div>
+					<% end %>
+				</div>
 			</div>
-	</body>
-</html>
+		</div>
+	</div>
+
+
+
+	
+	
+</section>	
+	
+	<!-- 일단 지우지 말아주세요 -->		   
+<!--<script>-->
+<!--    $.ajax({-->
+<!--        method: "POST",-->
+<!--        url: "/home",-->
+<!--        data: { name: "petsearch"}-->
+<!--            })-->
+<!--    .done(function( msg ) {-->
+<!--    alert( "Data Saved: " + msg );-->
+<!--                        });	                    	-->
+<!-- </script>-->
+
+

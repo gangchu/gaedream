@@ -9,14 +9,19 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
-//= require bootstrap
-//= require isotope.pkgd.min
-//= require jquery-1.12.4.min
-//= require jquery.slicknav
-//= require main
 //= require jquery
 //= require jquery_ujs
+//= require jquery-1.12.4.min
+//= require jquery.slicknav
+
+//= require bootstrap
+//= require main
+//= require isotope.pkgd.min
+
+
+
+
+
 //= require summernote
 //= require summernote/locales/ko-KR
 //= require_tree .

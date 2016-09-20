@@ -2,31 +2,62 @@
 		<div class="wrapper">
 			<div class="container">
 				<div class="blog">
+					<center><h2><%=@one_pet.pet_subject%></h2></center><br>
 					<div class="row">
-						<div class="col-md-9 col-sm-9 col-xs-12 blog-content">
+						<div class="col-md-7 col-sm-9 col-xs-12 blog-content">
 							<div class="blog-post">
 								<div class="blog-img">
-									<a href="journal-single.html">
-									<img src="http://placehold.it/840x420" alt="">
-									</a>
-								</div>
-								<div class="blog-info">
-									<h2><a href="journal-single.html">New electric cars are fast</a></h2>
-									<ul class="post-info">
-										<li><%= @one_pet.pet_subject %></li>
-										<li><%= @one_pet.name %></li>
-										<li><%= @one_pet.residence %></li>
-										<li><%= @one_pet.kind %></li>
-										<li><%= @one_pet.age %></li>
-										<li><%= @one_pet.sex %></li>
-										<li><%= @one_pet.detail %></li>
-									</ul>
-									<p></p>
-									
+									<img src="<%= @one_pet.image_url%>" data-zoom-image="<%= @one_pet.image_url%>">
 								</div>
 							</div>
+						</div>
+						<div class="col-md-5 col-sm-9 col-xs-12 blog-content">
+							<ul class="post-info">
+								<li> 이름 : <%= @one_pet.name %></li><br>
+								<li> 거주지역 : <%= @one_pet.residence %></li><br>
+								<li> 견종 : <%= @one_pet.kind %></li><br>
+								<li> 나이 :<%= @one_pet.age %></li><br>
+								<li> 성별 : <%= @one_pet.sex %></li><br>
+								<li> 세부사항 : <%= @one_pet.detail.html_safe %></li><br>
+								<% if user_signed_in? %>
+									<button type="button" class="btn btn-default common"><a href="/show/<%= @one_pet.user_id%>">글쓴이에게 메시지 보내기</a></button>
+									<% if @one_pet.user_id == current_user.id %>
+										<a href="/delete_pet/<%=@one_pet.id %>" onclick="return confirm('파일을 삭제하시겠습니까?');" class="btn btn-default">파일삭제</a>
+									<% end %>
+								
+								<% end %>
+								
+							</ul>
+						</div>
 					</div>
+					<form action="/home/writenewdogreply" method="POST">
+					  	<input type="hidden" name="id_of_newdog" value="<%=params[:id]%>">
+					  <div class="form-group">
+						 <label for="comment">댓글</label>
+						 <textarea class="form-control" name ="content" rows="5" id="comment"></textarea>
+					  </div>
+					  <button type="submit" class="btn btn-default">Submit</button>
+					</form>
 				</div>
+				<table class="table" style="width:100%">
+			      <tr>
+			        <th>댓글</th>
+			        <th>작성자</th>
+			      </tr>
+			      <br>
+			      <br>
+				      <% @one_pet.newdogreplies.each do |r| %>
+				      <tr>
+				        <td><%= r.content %></td>
+				        <td><%= r.writer %></td>
+				        <td>
+				        	<% if r.writer == current_user.name %>
+								<a href="/delete_reply/<%=r.id %>" onclick="return confirm('파일을 삭제하시겠습니까?');" class="btn btn-default">삭제</a>
+							<% end %>
+						</td>
+				      </tr>
+				      <%end%>
+			    </table>
 			</div>
-		</div>
 	</div>
+</div>

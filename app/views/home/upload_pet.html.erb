@@ -2,10 +2,10 @@
 		<div class="loader"></div>
 		<div class="wrapper">
 			<div class="container">
-				
+				<br>
   				<form action="/pet_upload" method="POST" enctype="multipart/form-data">
   					<div class="form-group">
-					    <label for="pet_subject">제목</label>
+					    <label for="pet_subject">게시글 제목</label>
 					    <input type="text" class="form-control" id="pet_subject" name="pet_subject" placeholder="제목">
 					  </div>
   					<div class="form-group">
@@ -22,7 +22,7 @@
 					  </div>
 					  <div class="form-group">
 					    <label for="age">나이</label>
-					    <input type="text" class="form-control" id="age" name="age" placeholder="나이">
+					    <input type="text" class="form-control" id="age" name="age" placeholder="개월, 살 등의 나이단위를 정확히 붙여주세요.">
 					  </div>
 					  <div class="form-group">
 					    <label for="sex">성별</label>
@@ -30,12 +30,12 @@
 					  </div>
 					  
 					  <div class="form-group">
-					    <label for="exampleInputFile">File input</label>
+					    <label for="exampleInputFile">File or Image input</label>
+					    <p class="help-block">파일이나 이미지를 선택하세요</p>
 					    <input type="file" name="pic" id="exampleInputFile">
-					    <p class="help-block">파일을 선택하세요</p>
 					  </div>
     				
-    				<div id="summernote" name="detail"></div>
+    				<textarea name="detail" id="summernote"></textarea>
   			    
   			    <button type="submit" class="btn btn-default">등록</button>
   			  </form>
@@ -52,6 +52,7 @@
     $("#summernote").summernote({
       lang: 'ko-KR',
       height: 200,
+      placeholder: "오직 글꼴 수정만! 이미지는 넣지 말아주세요.",
       codemirror: {
         lineWrapping: true,
         lineNumbers: true,
